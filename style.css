@@ -1,0 +1,86 @@
+.links {
+    color: black;
+    margin: 5px;
+    
+    /* width: 30%; */
+}
+/* .user-name {
+    border: 2xp solid black;
+    width: 80%;
+    display: inline-block;
+    position: relative;
+    font-size: large;
+} */
+
+.name-wrapper {
+    /* border: 2px black solid; */
+    /* border-radius: 50%; */
+    width: 50%;
+    text-align: center;
+    display: inline-block;
+    margin: 1% 3%;
+    
+    padding: 10% auto;
+}
+
+.link-wrapper {
+    border: 2px black solid;
+    /* border-radius: 75%; */
+    width: 20%;
+    text-align: center;
+    /* float: right; */
+    margin: 5% 5%;
+    padding: 1% 1%;
+
+}
+
+.user-wrapper {
+    /* border: 2px black solid; */
+    width: 90%;
+    text-align: center;
+    margin-top: 2%;
+    margin-left: 1%;
+    display: inline-block;
+    
+}
+
+.info-wrapper {
+    border: 2px black solid;
+    width: 30%;
+    text-align: center;
+    margin: 7% 12%;
+    padding: 1% 1%;
+}
+
+.bottom-wrapper {
+    display: inline-block;
+}
+
+.userBio {
+    font-size: large;
+}
+
+body {
+    text-align: center;
+}
+
+.main {
+    background-color: white;
+    border: 2px solid black;
+    width: 90%;
+    height: 90%;
+    text-align: center;
+    display: grid;
+    justify-self: center;
+    margin: 5% auto;
+
+}
+
+
+
+.my-pic {
+    border: 2px solid black;
+    border-radius: 80%;
+    display: inline-block;
+    margin-top: 1%;
+}
