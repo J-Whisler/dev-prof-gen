@@ -89,11 +89,11 @@ function generateHTML(response) {
      </div>
 <div class="row">
  <div class="info-wrapper">
-       <p class="userRepo-wrapper">Gitbub Stats: </p>
-       <div class="userRepo">Number of repos: ${response.data.public_repos}</div>
-       <div class="userFollowers">Number of followers: ${response.data.followers}</div>
-       <div class="userFollowing">Number of following: ${response.data.following}</div>
-       <div class="userStars">Number of Stars: ${response.data.public_gists}</div>
+       <p class="user-repo-wrapper">Gitbub Stats: </p>
+       <div class="user-repo">Number of repos: ${response.data.public_repos}</div>
+       <div class="user-followers">Number of followers: ${response.data.followers}</div>
+       <div class="user-following">Number of following: ${response.data.following}</div>
+       <div class="user-stars">Number of Stars: ${response.data.public_gists}</div>
      </div>
 
      <div class="link-wrapper">
