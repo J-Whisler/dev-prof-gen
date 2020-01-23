@@ -92,8 +92,8 @@ function generateHTML(response) {
        <p class="userRepo-wrapper">Gitbub Stats: </p>
        <div class="userRepo">Number of repos: ${response.data.public_repos}</div>
        <div class="userFollowers">Number of followers: ${response.data.followers}</div>
-       <div class="userStars">Number of Stars: ${response.data.public_gists}</div>
        <div class="userFollowing">Number of following: ${response.data.following}</div>
+       <div class="userStars">Number of Stars: ${response.data.public_gists}</div>
      </div>
 
      <div class="link-wrapper">
