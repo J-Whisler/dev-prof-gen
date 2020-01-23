@@ -12,6 +12,10 @@
     font-size: large;
 } */
 
+.head-wrapper {
+    margin:  1% 5%;
+}
+
 .name-wrapper {
     /* border: 2px black solid; */
     /* border-radius: 50%; */
@@ -26,7 +30,7 @@
 .link-wrapper {
     border: 2px black solid;
     /* border-radius: 75%; */
-    width: 20%;
+    width: 22%;
     text-align: center;
     /* float: right; */
     margin: 5% 5%;
@@ -34,14 +38,19 @@
 
 }
 
+
 .user-wrapper {
     /* border: 2px black solid; */
     width: 90%;
     text-align: center;
-    margin-top: 2%;
+    margin-top: 1%;
     margin-left: 1%;
     display: inline-block;
     
+}
+
+.userRepo-wrapper {
+    margin: 1% 1%;
 }
 
 .info-wrapper {
@@ -54,6 +63,7 @@
 
 .bottom-wrapper {
     display: inline-block;
+    margin-top: 1%;
 }
 
 .userBio {
@@ -67,8 +77,8 @@ body {
 .main {
     background-color: white;
     border: 2px solid black;
-    width: 90%;
-    height: 90%;
+    width: 80%;
+    height: 80%;
     text-align: center;
     display: grid;
     justify-self: center;
@@ -84,3 +94,10 @@ body {
     display: inline-block;
     margin-top: 1%;
 }
+
+.location {
+    border-top: 2px black solid;
+    margin: 1%;
+    padding-top: 4%;
+}
+

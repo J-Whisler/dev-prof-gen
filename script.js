@@ -3,6 +3,7 @@ const axios = require("axios");
 const inquirer = require("inquirer");
 let user;
 
+
 const questions = [
   {
     type: 'input',
@@ -19,9 +20,10 @@ const questions = [
 
 
 
+
+
 function gitCall(answers) {
-  let name = answers.name
-  const queryURL = `https://api.github.com/users/${name}`
+  const queryURL = `https://api.github.com/users/${answers.name}`
   axios.get(queryURL).then(function(response) {
       fs.writeFile("index.html", generateHTML(response), function(err, answers) {
     if (err) console.log('error', err);
@@ -46,25 +48,21 @@ inquirer.prompt(questions)
     gitCall(answers)
     user = answers
     
+    
   })
   .catch(function(err) {
     console.log(err);
 });
 
 
-// function userMap(response) { 
-//   const queryURL2 = `https:'//maps.googleapis.com/maps/api/staticmap?center= '${response.data.location} + ' &zoom=14&size=400x400&key=AIzaSyDIEVzD85LZ_BWwmWAD2qPxTiUNGgA28YI'`
-//   axios.get(queryURL2).then(function(response) {
 
-//    }
-//   )
-// }
 
   
 
 
 
 function generateHTML(response) {
+  
   return `
 <!DOCTYPE html>
 <html lang="en">
@@ -78,7 +76,7 @@ function generateHTML(response) {
 <body style="background-color: ${user.color};">
   
   <main class="main">
-  <div>
+  <div class="head-wrapper">
    <img class="my-pic" src="${response.data.avatar_url}">
      <div class="name-wrapper">
       <h3 class="user-name">Hi, my name is <em>${response.data.name}</em>!</h3>
@@ -86,15 +84,15 @@ function generateHTML(response) {
   </div>
 
    <div class="user-wrapper">
-       <p class="userBio">Bio: </p>
+       <p class="userBio"><b>Bio: </b></p>
        <div class="userBio">${response.data.bio}</div>
      </div>
 <div class="row">
  <div class="info-wrapper">
-       <p class="userRepo">Gitbub Stats: </p>
+       <p class="userRepo-wrapper">Gitbub Stats: </p>
        <div class="userRepo">Number of repos: ${response.data.public_repos}</div>
        <div class="userFollowers">Number of followers: ${response.data.followers}</div>
-       <div class="userStars"></div>
+       <div class="userStars">Number of Stars: ${response.data.public_gists}</div>
        <div class="userFollowing">Number of following: ${response.data.following}</div>
      </div>
 
@@ -102,7 +100,7 @@ function generateHTML(response) {
        <p class="links">Links: </p>
        <div><button class="links"><a href="${response.data.html_url}" target="_blank">Github</a></button></div>
        <div><button class="links"><a href="${response.data.blog}" target="_blank">User blog</a></button></div>
-       <div><button class="links"><a href="${response.data.location}" target="location.html">User location</a></button></div>
+       <div><p class="location" id="location">My location: ${response.data.location}</p></div>
      </div>
     
      
@@ -110,6 +108,8 @@ function generateHTML(response) {
 
     
   </main>
+
+  <script src="script.js"></script>
   
 </body>
 </html>
@@ -118,14 +118,3 @@ function generateHTML(response) {
 
 
 
-// function promptUser(answers) {
-//   then(function(answers) {
-//     const html = generateHTML(answers);    
-//     return writeFileAsync("index.html", html);
-//   })
-//   .then(function() {
-//     console.log("Successfully wrote to index.html");
-//   })
-//   .catch(function(err) {
-//     console.log(err);
-//   })};
