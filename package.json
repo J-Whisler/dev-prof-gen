@@ -1,0 +1,27 @@
+{
+  "name": "dev-prof-gen",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "html-pdf": "^2.2.0",
+    "fs": "^0.0.1-security",
+    "inquirer": "^7.0.4",
+    "pdf": "^0.1.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/J-Whisler/dev-prof-gen.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/J-Whisler/dev-prof-gen/issues"
+  },
+  "homepage": "https://github.com/J-Whisler/dev-prof-gen#readme"
+}
