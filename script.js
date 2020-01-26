@@ -1,6 +1,9 @@
 const fs = require("fs");
 const axios = require("axios");
 const inquirer = require("inquirer");
+const pdf = require("html-pdf")
+const html = fs.readFileSync('./index.html', 'utf-8')
+const options = { format: 'Letter' }
 let user;
 
 
@@ -27,7 +30,7 @@ function gitCall(answers) {
   axios.get(queryURL).then(function(response) {
       fs.writeFile("index.html", generateHTML(response), function(err, answers) {
     if (err) console.log('error', err);
-     console.log(response)
+    //  console.log(response)
    })
   
   })
@@ -54,6 +57,15 @@ inquirer.prompt(questions)
     console.log(err);
 });
 
+// function pdfCreate (userData) {
+//   const html = fs.readFileSync('./index.html', 'utf-8')
+//   const option = { format: 'Letter' }
+
+//   pdf.create(html, option).toFile(`./${userData}.pdf`, function(err, res) {
+//     if (err) throw err
+//   }
+//   )
+// }
 
 
 
@@ -62,6 +74,8 @@ inquirer.prompt(questions)
 
 
 function generateHTML(response) {
+
+const userData = response.data.name
   
   return `
 <!DOCTYPE html>
@@ -113,7 +127,22 @@ function generateHTML(response) {
   
 </body>
 </html>
-`}
+`
+// fs.writeFile('index.html', HTML, function(err) {
+//   if (err) {
+//     return console.log(err)
+//   } 
+//   console.log('HTML saved to PDF')
+//   pdfCreate(userData)
+// })
+pdf.create(html, options).toFile('./index.pdf', function(err, res) {
+  if (err) return console.log(err);
+  console.log(res)
+})
+}
+
+
+
 
 
 
