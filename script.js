@@ -136,10 +136,13 @@ const userData = response.data.name
 //   pdfCreate(userData)
 // })
 pdf.create(html, options).toFile('./index.pdf', function(err, res) {
-  if (err) return console.log(err);
+  if (err) {
+    return console.log(err);
   console.log(res)
-})
-}
+} else {
+  console.log('printed to pdf')
+
+}})}
 
 
 
