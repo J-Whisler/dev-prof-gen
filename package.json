@@ -5,7 +5,7 @@
   "main": "script.js",
   "dependencies": {
     "axios": "^0.19.2",
-    "html-pdf": "^2.2.0",
+    "html-pdf": "^3.0.1",
     "fs": "^0.0.1-security",
     "inquirer": "^7.0.4",
     "pdf": "^0.1.0"
